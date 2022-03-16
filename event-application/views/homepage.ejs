@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>Homepage</h1>
+  <a href="/events/create">Create new event</a>
+
+  <% events.forEach( (event) => { %>
+    <div>
+      <h2><%= event.title %> </h3>
+      <img src="<%= event.thumbnail %>" alt="">
+      <h4><%- event.date %> </h4>
+      <%- event.content %> 
+    </div>
+  <% }); %>
+
+</body>
+</html>
