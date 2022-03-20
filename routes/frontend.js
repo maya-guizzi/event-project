@@ -43,16 +43,20 @@ router.post('/register', async (req,res) => {
   res.render('register', {})
 })
 
-router.get('/event/:ObjectId', (req,res) => {
-  res.render('event1')
+router.get('/event/:ObjectId', async (req,res) => {
+  // res.render('event-details')
+  const events = await Event.find().lean()
+  console.log(events.ObjectId)
+  res.render('event-details', {
+    events:events
+  })
 })
 
 router.post('/event/:ObjectId', async (req,res) => {
-  const events = await Event.find().lean()
-  console.log(events)
-  res.render('homepage', {
-    events:events
-  })
+  // create  a new document on the database
+  await User.create(req.body)
+  // console.log(req.body)
+  res.render('event-details', {})
 })
 
 router.get('/events/:id', () => {
