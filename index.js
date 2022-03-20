@@ -21,6 +21,7 @@ mongoose.connect(mongoDbURI)
 
 // Connect the Models
 require('./models/Event')
+require('./models/User')
 
 
 // Connect the routes

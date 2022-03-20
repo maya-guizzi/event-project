@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 // Get the models
 const Event = mongoose.model('events')
+const User = mongoose.model('users')
 
 
 // create the routes
@@ -31,6 +32,28 @@ router.get('/events/create', (req,res) => {
   res.render('new-event', {})
 })
 
+router.get('/register', (req,res) => {
+  res.render('register')
+})
+
+router.post('/register', async (req,res) => {
+  // create  a new document on the database
+  await User.create(req.body)
+  // console.log(req.body)
+  res.render('register', {})
+})
+
+router.get('/event/:ObjectId', (req,res) => {
+  res.render('event1')
+})
+
+router.post('/event/:ObjectId', async (req,res) => {
+  const events = await Event.find().lean()
+  console.log(events)
+  res.render('homepage', {
+    events:events
+  })
+})
 
 router.get('/events/:id', () => {
   
