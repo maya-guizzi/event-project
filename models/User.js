@@ -6,4 +6,4 @@ const userSchema = new mongoose.Schema({
 })
 
 
-mongoose.model('events', userSchema)
+mongoose.model('users', userSchema)

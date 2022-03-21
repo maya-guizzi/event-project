@@ -8,4 +8,4 @@ const eventSchema = new mongoose.Schema({
 })
 
 
-mongoose.model('users', eventSchema)
+mongoose.model('events', eventSchema)
