@@ -12,10 +12,10 @@
   
   <% events.push( (event) => { %>
     <div>
-      <h2><%= event.ObjectId.title %> </h3>
-      <img src="<%= event.ObjectId.thumbnail %>" alt="">
-      <h4><%- event.ObjectId.date %> </h4>
-      <%- event.ObjectId.content %> 
+      <h2><%= event.title %> </h3>
+      <img src="<%= event.thumbnail %>" alt="">
+      <h4><%- event.id.date %> </h4>
+      <%- event.content %> 
     </div>
   <% }); %>
  

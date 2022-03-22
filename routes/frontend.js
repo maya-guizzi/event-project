@@ -43,16 +43,18 @@ router.post('/register', async (req,res) => {
   res.render('register', {})
 })
 
-router.get('/event/:ObjectId', async (req,res) => {
+router.get('/event/:id', async (req,res) => {
   // res.render('event-details')
-  const events = await Event.find().lean()
-  console.log(events.ObjectId)
+  const events = await Event.find({
+    _id: req.params.id
+  }).lean()
+  console.log(events)
   res.render('event-details', {
     events:events
   })
 })
 
-router.post('/event/:ObjectId', async (req,res) => {
+router.post('/event/:id', async (req,res) => {
   // create  a new document on the database
   await User.create(req.body)
   // console.log(req.body)

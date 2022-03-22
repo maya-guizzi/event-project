@@ -14,7 +14,7 @@
   <% events.forEach( (event) => { %>
     <div>
       <h2><%= event.title %> </h3>
-      <a href="/event/:ObjectId">event details</a>
+      <a href="/event/:id">event details</a>
       <img src="<%= event.thumbnail %>" alt="">
       <h4><%- event.date %> </h4>
       <%- event.content %> 
